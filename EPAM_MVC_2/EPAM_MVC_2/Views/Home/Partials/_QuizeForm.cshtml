@@ -1,0 +1,82 @@
+﻿@model EPAM_MVC_2.Models.UserInfo
+
+@using EPAM_MVC_2.Helpers
+
+<div class="row">
+    @using (Html.BeginForm("QuizeResult", "Home", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()        
+        <div class="col s12">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="row">               
+                <div class="input-field col s12 m12 l6">
+                    @Html.LabelFor(model => model.FirstName)
+                    @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @required = "required" } })
+                    @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                </div>                
+                <div class="input-field col s12 m12 l6">
+                    @Html.LabelFor(model => model.LastName)
+                    @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @required = "required" } })
+                    @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="row">                
+                <div class="input-field col s12 m6 l6">
+                    @Html.LabelFor(model => model.Email)
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @type = "email", @required = "required" } })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </div>
+                <div class="input-field col s12 m6 l6">
+                    @Html.LabelFor(model => model.Age)
+                    @Html.EditorFor(model => model.Age, new { htmlAttributes = new { @min = "1", @max = "120", @required = "required" } })
+                    @Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger"})
+                </div>  
+            </div>
+
+            <div class="row"> 
+                <div class="col s12 m6 l6 centralized">
+                    <p>
+                        @Html.RadioButtonFor(model => model.Gender, "male", new { @class = "with-gap", @checked = "checked", @id = "radio_1" })
+                        <label for="radio_1">Male</label>
+                    </p>
+                    <p>
+                        @Html.RadioButtonFor(model => model.Gender, "female", new { @class = "with-gap", @id = "radio_2" })
+                        <label for="radio_2">Female</label>
+                    </p>
+                    @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+                </div>                
+                <div class="input-field col s12 m6 l6">
+                    @Html.CreateDropDown("Choose what your`re interested in", new string[] { "Programing", "Design", "Cats"}, new { @name = "Interest"})
+                    <label>Interest</label>
+                    @Html.ValidationMessageFor(model => model.Interest, "", new { @class = "text-danger" })
+                </div>                             
+            </div>
+
+            <div class="row">              
+                <div class="input-field col s12">
+                    @Html.LabelFor(model => model.About, "Something about yourself:")
+                    @Html.TextAreaFor(model => model.About, new { @class = "materialize-textarea" })
+                    @Html.ValidationMessageFor(model => model.About, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="row">               
+                <div class="col s12">
+                    <p>                       
+                        <input type="checkbox" name="isSubscribed" id="checkbox_sub" value="true" />
+                        <label for="checkbox_sub">Subscribe for getting news!</label>
+                        <input type="checkbox" name="isSubscribed" hidden value="false" />                       
+                        @Html.ValidationMessageFor(model => model.isSubscribed, "", new { @class = "text-danger" })
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col s2 push-s5">
+                    <input type="submit" value="Submit" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }
+</div>

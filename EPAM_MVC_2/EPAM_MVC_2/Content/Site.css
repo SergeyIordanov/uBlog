@@ -1,0 +1,40 @@
+﻿body{
+    background: #a4bdd1 center url(Images/layout.jpg) no-repeat fixed;
+}
+
+.header-right{
+    background-color: rgb(38, 166, 154);
+}
+
+.no-margin-bot{
+    margin-bottom: 0;
+}
+
+.centralized{
+    text-align: center;
+}
+
+.footer-copyright{
+    margin: 10px;
+}
+
+.to-the-top{
+    height: 50px;
+    font-size: 24px;
+}
+
+.welcome-text{
+    font-size: 24px;
+}
+
+.sub-welcome-text{
+    font-size: 16px;
+}
+
+.text-danger{
+    color: tomato;
+}
+
+.colored-hr{
+    border: 2px solid rgb(38, 166, 154);
+}

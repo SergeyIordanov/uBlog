@@ -1,0 +1,73 @@
+﻿@model EPAM_MVC_2.Models.UserInfo
+
+@{
+    ViewBag.Title = "QuizeResult";
+}
+
+<div class="row no-margin-bot">
+    <div class="col s7 push-s1">
+        <div id="main-body" class="card">
+            <div class="row"></div>
+            <p class="flow-text welcome-text centralized">Thank you!</p>
+            <p class="flow-text sub-welcome-text centralized">The information you're entered is below</p>
+            <hr class="colored-hr" />
+            <div class="row">
+                <div class="col s6 push-s3">
+                    <table class="bordered">
+                        <tbody>
+                            <tr>
+                                <td>First name</td>
+                                <td>@Model.FirstName</td>
+                            </tr>
+                            <tr>
+                                <td>Last name</td>
+                                <td>@Model.LastName</td>
+                            </tr>
+                            <tr>
+                                <td>Gender</td>
+                                <td>@Model.Gender</td>
+                            </tr>
+                            <tr>
+                                <td>Age</td>
+                                <td>@Model.Age</td>
+                            </tr>
+                            <tr>
+                                <td>E-mail</td>
+                                <td>@Model.Email</td>
+                            </tr>
+                            <tr>
+                                <td>Interest</td>
+                                <td>@Model.Interest</td>
+                            </tr>
+                            <tr>
+                                <td>About</td>
+                                <td>@Model.About</td>
+                            </tr>
+                            <tr>
+                                @if (Model.isSubscribed)
+                                {
+                                    <td colspan="2">You subscribed for news =)</td>
+                                }
+                                else
+                                {
+                                    <td colspan="2">You didn't subscribed for news =(</td>
+                                }
+                            </tr>
+                        </tbody>
+                    </table>                                    
+                </div>
+            </div>           
+        </div>
+    </div>
+    <div class="col s3 push-s1">
+        <div id="right-sidebar" class="card centralized">
+            <div class="row"></div>
+            <p class="card-title flow-text">Menu</p>
+            <div class="collection with-header">
+                @Html.ActionLink("Main", "Index", "Home", new { @class = "collection-item" })
+                @Html.ActionLink("Guest", "Guest", "Home", new { @class = "collection-item" })
+                @Html.ActionLink("Quize", "Quize", "Home", new { @class = "collection-item active" })
+            </div>
+        </div>
+    </div>
+</div>
