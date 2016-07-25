@@ -11,34 +11,32 @@ namespace uBlog.WEB.Controllers
 {
     public class HomeController : Controller
     {
-        
-        IBlogService blogService;
+        readonly IBlogService _blogService;
         public HomeController(IBlogService serv)
         {
-            blogService = serv;
+            _blogService = serv;
         }
 
         [HttpGet]
         public ActionResult Index()
         {
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<ArticleDTO, ArticleViewModel>());
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<ArticleDto, ArticleViewModel>());
             var mapper = config.CreateMapper();
-            return View(mapper.Map<IEnumerable<ArticleViewModel>>(blogService.GetArticles()));
+            return View(mapper.Map<IEnumerable<ArticleViewModel>>(_blogService.GetArticles()));
         }
 
         [HttpPost]
         public ActionResult Index(ArticleViewModel article)
         {
-            IEnumerable<ArticleViewModel> model;
-            var configView = new MapperConfiguration(cfg => cfg.CreateMap<ArticleDTO, ArticleViewModel>());
-            var configDTO = new MapperConfiguration(cfg => cfg.CreateMap<ArticleViewModel, ArticleDTO>());
-            var mapper = configDTO.CreateMapper();
+            var configView = new MapperConfiguration(cfg => cfg.CreateMap<ArticleDto, ArticleViewModel>());
+            var configDto = new MapperConfiguration(cfg => cfg.CreateMap<ArticleViewModel, ArticleDto>());
+            var mapper = configDto.CreateMapper();
 
             try
             {
                 article.PublishDate = DateTime.UtcNow;
-                var articleDTO = mapper.Map<ArticleDTO>(article);
-                blogService.CreateArticle(articleDTO);
+                var articleDto = mapper.Map<ArticleDto>(article);
+                _blogService.CreateArticle(articleDto);
             }
             catch (ValidationException ex)
             {
@@ -46,7 +44,7 @@ namespace uBlog.WEB.Controllers
             }
 
             mapper = configView.CreateMapper();
-            model = mapper.Map<IEnumerable<ArticleViewModel>>(blogService.GetArticles());
+            var model = mapper.Map<IEnumerable<ArticleViewModel>>(_blogService.GetArticles());
             return PartialView("Partials/_ArticleList", model);
         }
     }

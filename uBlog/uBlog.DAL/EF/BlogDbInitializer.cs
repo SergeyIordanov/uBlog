@@ -8,7 +8,7 @@ namespace uBlog.DAL.EF
     {
         protected override void Seed(BlogContext db)
         {
-            db.Articles.AddRange(new Article[] {
+            db.Articles.AddRange(new[] {
                 new Article()
                 {
                     ArticleId = 1,
@@ -35,7 +35,7 @@ namespace uBlog.DAL.EF
                 },
             });
 
-            db.Reviewes.AddRange(new Review[] {
+            db.Reviewes.AddRange(new[] {
                 new Review {
                     ReviewId = 1,
                     AuthorName = "Arthur",

@@ -34,7 +34,7 @@ namespace uBlog.WEB.Helpers
 
                 foreach (var attr in dic)
                 {
-                    select.MergeAttribute(attr.Key.ToString(), attr.Value.ToString());
+                    select.MergeAttribute(attr.Key, attr.Value);
                 }
             }
             return new MvcHtmlString(select.ToString());

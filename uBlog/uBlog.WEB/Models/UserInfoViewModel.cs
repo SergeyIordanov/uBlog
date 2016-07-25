@@ -4,7 +4,7 @@ namespace uBlog.WEB.Models
 {
     public class UserInfoViewModel
     {
-        public int UserInfoID { get; set; }
+        public int UserInfoId { get; set; }
 
         [DisplayName("First name")]
         public string FirstName { get; set; }
@@ -22,6 +22,6 @@ namespace uBlog.WEB.Models
 
         public string Interest { get; set; }
 
-        public bool isSubscribed { get; set; }
+        public bool IsSubscribed { get; set; }
     }
 }

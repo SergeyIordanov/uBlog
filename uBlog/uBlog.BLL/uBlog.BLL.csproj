@@ -52,9 +52,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataTransferObjects\ArticleDTO.cs" />
-    <Compile Include="DataTransferObjects\ReviewDTO.cs" />
-    <Compile Include="DataTransferObjects\UserInfoDTO.cs" />
+    <Compile Include="DataTransferObjects\ArticleDto.cs" />
+    <Compile Include="DataTransferObjects\ReviewDto.cs" />
+    <Compile Include="DataTransferObjects\UserInfoDto.cs" />
     <Compile Include="Infrastructure\ServiceModule.cs" />
     <Compile Include="Infrastructure\ValidationException.cs" />
     <Compile Include="Interfaces\IBlogService.cs" />

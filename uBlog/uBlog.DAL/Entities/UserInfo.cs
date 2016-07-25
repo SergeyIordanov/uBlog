@@ -5,7 +5,7 @@ namespace uBlog.DAL.Entities
     public class UserInfo
     {
         [Required]
-        public int UserInfoID { get; set; }
+        public int UserInfoId { get; set; }
 
         [Required]
         public string FirstName { get; set; }
@@ -27,6 +27,6 @@ namespace uBlog.DAL.Entities
         public string Interest { get; set; }
 
         [Required]
-        public bool isSubscribed { get; set; }
+        public bool IsSubscribed { get; set; }
     }
 }

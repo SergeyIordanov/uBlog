@@ -5,12 +5,12 @@ namespace uBlog.BLL.Interfaces
 {
     public interface IBlogService
     {
-        void CreateArticle(ArticleDTO articleDTO);
-        void CreateReview(ReviewDTO reviewDTO);
-        void CreateUserInfo(UserInfoDTO userInfoDTO);
-        UserInfoDTO GetUserInfo(int? id);
-        IEnumerable<ArticleDTO> GetArticles();
-        IEnumerable<ReviewDTO> GetReviewes();
+        void CreateArticle(ArticleDto articleDto);
+        void CreateReview(ReviewDto reviewDto);
+        void CreateUserInfo(UserInfoDto userInfoDto);
+        UserInfoDto GetUserInfo(int? id);
+        IEnumerable<ArticleDto> GetArticles();
+        IEnumerable<ReviewDto> GetReviewes();
         void Dispose();
     }
 }

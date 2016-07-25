@@ -1,8 +1,8 @@
 ﻿namespace uBlog.BLL.DataTransferObjects
 {
-    public class UserInfoDTO
+    public class UserInfoDto
     {
-        public int UserInfoID { get; set; }
+        public int UserInfoId { get; set; }
 
         public string FirstName { get; set; }
 
@@ -18,6 +18,6 @@
 
         public string Interest { get; set; }
 
-        public bool isSubscribed { get; set; }
+        public bool IsSubscribed { get; set; }
     }
 }

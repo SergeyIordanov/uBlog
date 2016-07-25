@@ -7,62 +7,38 @@ namespace uBlog.DAL.Repositories
 {
     public class BlogUnitOfWork : IUnitOfWork
     {
-        private BlogContext db;
-        private ArticleRepository articleRepository;
-        private ReviewRepository reviewRepository;
-        private UserInfoRepository userInfoRepository;
+        private readonly BlogContext _db;
+        private ArticleRepository _articleRepository;
+        private ReviewRepository _reviewRepository;
+        private UserInfoRepository _userInfoRepository;
 
         public BlogUnitOfWork(string connectionString)
         {
-            db = new BlogContext(connectionString);
+            _db = new BlogContext(connectionString);
         }
 
-        public IRepository<Article> Articles
-        {
-            get
-            {
-                if (articleRepository == null)
-                    articleRepository = new ArticleRepository(db);
-                return articleRepository;
-            }
-        }
+        public IRepository<Article> Articles => _articleRepository ?? (_articleRepository = new ArticleRepository(_db));
 
-        public IRepository<Review> Reviewes
-        {
-            get
-            {
-                if (reviewRepository == null)
-                    reviewRepository = new ReviewRepository(db);
-                return reviewRepository;
-            }
-        }
+        public IRepository<Review> Reviewes => _reviewRepository ?? (_reviewRepository = new ReviewRepository(_db));
 
-        public IRepository<UserInfo> UserInfoes
-        {
-            get
-            {
-                if (userInfoRepository == null)
-                    userInfoRepository = new UserInfoRepository(db);
-                return userInfoRepository;
-            }
-        }
+        public IRepository<UserInfo> UserInfoes => _userInfoRepository ?? (_userInfoRepository = new UserInfoRepository(_db));
 
         public void Save()
         {
-            db.SaveChanges();
+            _db.SaveChanges();
         }
 
-        private bool disposed = false;
+        private bool _disposed;
 
         public virtual void Dispose(bool disposing)
         {
-            if (!disposed)
+            if (!_disposed)
             {
                 if (disposing)
                 {
-                    db.Dispose();
+                    _db.Dispose();
                 }
-                disposed = true;
+                _disposed = true;
             }
         }
 

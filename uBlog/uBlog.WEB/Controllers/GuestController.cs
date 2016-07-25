@@ -11,33 +11,32 @@ namespace uBlog.WEB.Controllers
 {
     public class GuestController : Controller
     {
-        IBlogService blogService;
+        readonly IBlogService _blogService;
         public GuestController(IBlogService serv)
         {
-            blogService = serv;
+            _blogService = serv;
         }
 
         [HttpGet]
         public ActionResult Index()
         {
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<ReviewDTO, ReviewViewModel>());
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<ReviewDto, ReviewViewModel>());
             var mapper = config.CreateMapper();
-            return View(mapper.Map<IEnumerable<ReviewViewModel>>(blogService.GetReviewes()));
+            return View(mapper.Map<IEnumerable<ReviewViewModel>>(_blogService.GetReviewes()));
         }
 
         [HttpPost]
         public ActionResult Index(ReviewViewModel review)
         {
-            IEnumerable<ReviewViewModel> model;
-            var configView = new MapperConfiguration(cfg => cfg.CreateMap<ReviewDTO, ReviewViewModel>());
-            var configDTO = new MapperConfiguration(cfg => cfg.CreateMap<ReviewViewModel, ReviewDTO>());
-            var mapper = configDTO.CreateMapper();
+            var configView = new MapperConfiguration(cfg => cfg.CreateMap<ReviewDto, ReviewViewModel>());
+            var configDto = new MapperConfiguration(cfg => cfg.CreateMap<ReviewViewModel, ReviewDto>());
+            var mapper = configDto.CreateMapper();
 
             try
             {
                 review.PublishDate = DateTime.UtcNow;               
-                var reviewDTO = mapper.Map<ReviewDTO>(review);
-                blogService.CreateReview(reviewDTO);               
+                var reviewDto = mapper.Map<ReviewDto>(review);
+                _blogService.CreateReview(reviewDto);               
             }
             catch (ValidationException ex)
             {
@@ -45,7 +44,7 @@ namespace uBlog.WEB.Controllers
             }
 
             mapper = configView.CreateMapper();
-            model = mapper.Map<IEnumerable<ReviewViewModel>>(blogService.GetReviewes());
+            var model = mapper.Map<IEnumerable<ReviewViewModel>>(_blogService.GetReviewes());
             return PartialView("Partials/_ReviewList", model);
         }
     }

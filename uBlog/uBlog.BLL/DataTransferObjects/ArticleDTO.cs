@@ -2,7 +2,7 @@
 
 namespace uBlog.BLL.DataTransferObjects
 {
-    public class ArticleDTO
+    public class ArticleDto
     {
         public int ArticleId { get; set; }
 

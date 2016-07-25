@@ -12,3 +12,17 @@ C:\1Sergey\4ProjectsInGit\uBlog(Multilayer)\uBlog\uBlog.BLL\bin\Debug\EntityFram
 C:\1Sergey\4ProjectsInGit\uBlog(Multilayer)\uBlog\uBlog.BLL\obj\Debug\uBlog.BLL.csprojResolveAssemblyReference.cache
 C:\1Sergey\4ProjectsInGit\uBlog(Multilayer)\uBlog\uBlog.BLL\obj\Debug\uBlog.BLL.dll
 C:\1Sergey\4ProjectsInGit\uBlog(Multilayer)\uBlog\uBlog.BLL\obj\Debug\uBlog.BLL.pdb
+C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog.BLL\bin\Debug\uBlog.BLL.dll
+C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog.BLL\bin\Debug\uBlog.BLL.pdb
+C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog.BLL\bin\Debug\AutoMapper.dll
+C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog.BLL\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog.BLL\bin\Debug\Ninject.dll
+C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog.BLL\bin\Debug\uBlog.DAL.dll
+C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog.BLL\bin\Debug\EntityFramework.dll
+C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog.BLL\bin\Debug\uBlog.DAL.pdb
+C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog.BLL\bin\Debug\AutoMapper.xml
+C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog.BLL\bin\Debug\Ninject.xml
+C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog.BLL\bin\Debug\EntityFramework.xml
+C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog.BLL\obj\Debug\uBlog.BLL.csprojResolveAssemblyReference.cache
+C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog.BLL\obj\Debug\uBlog.BLL.dll
+C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog.BLL\obj\Debug\uBlog.BLL.pdb

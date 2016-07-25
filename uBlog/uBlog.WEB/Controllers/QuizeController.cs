@@ -26,9 +26,9 @@ namespace uBlog.WEB.Controllers
         {
             try
             {
-                Mapper.Initialize(ctg => ctg.CreateMap<UserInfoViewModel, UserInfoDTO>());
-                var userInfoDTO = Mapper.Map<UserInfoDTO>(userInfo);
-                blogService.CreateUserInfo(userInfoDTO);
+                Mapper.Initialize(ctg => ctg.CreateMap<UserInfoViewModel, UserInfoDto>());
+                var userInfoDto = Mapper.Map<UserInfoDto>(userInfo);
+                blogService.CreateUserInfo(userInfoDto);
                 return View("QuizeResult", userInfo);
             }
             catch (ValidationException ex)

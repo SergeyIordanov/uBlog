@@ -8,3 +8,13 @@ C:\1Sergey\4ProjectsInGit\uBlog(Multilayer)\uBlog\uBlog.DAL\bin\Debug\EntityFram
 C:\1Sergey\4ProjectsInGit\uBlog(Multilayer)\uBlog\uBlog.DAL\obj\Debug\uBlog.DAL.csprojResolveAssemblyReference.cache
 C:\1Sergey\4ProjectsInGit\uBlog(Multilayer)\uBlog\uBlog.DAL\obj\Debug\uBlog.DAL.dll
 C:\1Sergey\4ProjectsInGit\uBlog(Multilayer)\uBlog\uBlog.DAL\obj\Debug\uBlog.DAL.pdb
+C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog.DAL\bin\Debug\uBlog.DAL.dll.config
+C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog.DAL\bin\Debug\uBlog.DAL.dll
+C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog.DAL\bin\Debug\uBlog.DAL.pdb
+C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog.DAL\bin\Debug\EntityFramework.dll
+C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog.DAL\bin\Debug\EntityFramework.xml
+C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog.DAL\obj\Debug\uBlog.DAL.csprojResolveAssemblyReference.cache
+C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog.DAL\obj\Debug\uBlog.DAL.dll
+C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog.DAL\obj\Debug\uBlog.DAL.pdb
