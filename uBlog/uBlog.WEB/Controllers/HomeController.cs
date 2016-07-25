@@ -47,5 +47,19 @@ namespace uBlog.WEB.Controllers
             var model = mapper.Map<IEnumerable<ArticleViewModel>>(_blogService.GetArticles());
             return PartialView("Partials/_ArticleList", model);
         }
+
+        [HttpPost]
+        public ActionResult Delete(int? id)
+        {
+            try
+            {
+                _blogService.DeleteArticle(id);
+            }
+            catch (ValidationException){ }
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<ArticleDto, ArticleViewModel>());
+            var mapper = config.CreateMapper();
+            return PartialView("Partials/_ArticleList", mapper.Map<IEnumerable<ArticleViewModel>>(_blogService.GetArticles()));
+        }
+
     }
 }

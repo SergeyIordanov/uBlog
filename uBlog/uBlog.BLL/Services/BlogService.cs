@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using System.Collections.Generic;
+using System.Linq;
 using uBlog.BLL.DataTransferObjects;
 using uBlog.BLL.Infrastructure;
 using uBlog.BLL.Interfaces;
@@ -65,8 +66,7 @@ namespace uBlog.BLL.Services
             var userInfo = Mapper.Map<UserInfo>(userInfoDto);
             Database.UserInfoes.Create(userInfo);
             Database.Save();
-        }
-
+        }       
 
         public IEnumerable<ArticleDto> GetArticles()
         {
@@ -89,6 +89,26 @@ namespace uBlog.BLL.Services
                 throw new ValidationException("UserInfo wasn't found", "");
             Mapper.Initialize(cfg => cfg.CreateMap<UserInfo, UserInfoDto>());
             return Mapper.Map<UserInfoDto>(userInfo);
+        }
+
+        public void DeleteArticle(int? id)
+        {
+            if (id == null)
+                throw new ValidationException("Id is null", "");
+            if (!Database.Articles.Find(x => x.ArticleId == id).Any())
+                throw new ValidationException("Article wasn't found", "");
+            Database.Articles.Delete((int)id);
+            Database.Save();
+        }
+
+        public void DeleteReview(int? id)
+        {
+            if (id == null)
+                throw new ValidationException("Id is null", "");
+            if (!Database.Reviewes.Find(x => x.ReviewId == id).Any())
+                throw new ValidationException("Review wasn't found", "");
+            Database.Reviewes.Delete((int)id);
+            Database.Save();
         }
 
         public void Dispose()
