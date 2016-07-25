@@ -1,0 +1,22 @@
+﻿@model uBlog.WEB.Models.ReviewViewModel
+
+@using (Ajax.BeginForm("Index", "Guest", new AjaxOptions { UpdateTargetId = "review_target", OnComplete = "clearReviewForm(false)" }))
+{
+    <div class="row">
+        <div class="input-field col s10 push-s1">
+            @Html.LabelFor(model => model.AuthorName, "Your name")
+            <input class="text-box single-line" id="review_author" name="AuthorName" required="required" type="text">
+            @*@Html.EditorFor(model => model.AuthorName, new { htmlAttributes = new { @required = "required", @id = "review_author" } })*@
+            @Html.ValidationMessageFor(model => model.AuthorName, "", new { @class = "text-danger" })
+        </div>
+        <div class="input-field col s10 push-s1">
+            @Html.LabelFor(model => model.Text, "Review:")
+            <textarea class="materialize-textarea" cols="20" id="review_text" name="Text" required="required" rows="2"></textarea>
+            @* @Html.TextAreaFor(model => model.Text, new { @class = "materialize-textarea", @required = "required", @id = "review_text" })*@
+            @Html.ValidationMessageFor(model => model.Text, "", new { @class = "text-danger" })
+        </div>
+        <div class="input-field col s10 push-s1">
+            <input type="submit" value="Send" class="btn btn-default" />
+        </div>
+    </div>
+}

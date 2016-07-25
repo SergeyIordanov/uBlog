@@ -1,0 +1,33 @@
+﻿@model IEnumerable<uBlog.WEB.Models.ReviewViewModel>
+
+@{
+    ViewBag.Title = "Guest";
+}
+
+<div class="row no-margin-bot">
+    <div class="col s7 push-s1">
+        <div id="main-body" class="card">
+            <div class="row"></div>
+            <p class="flow-text welcome-text centralized">Reviews</p>
+            <p class="flow-text sub-welcome-text centralized">You can live your own one using the form below</p>
+            <hr class="colored-hr" />
+                @Html.Partial("Partials/_ReviewForm", Model.LastOrDefault())
+            <hr class="colored-hr" />
+            <div id="review_target" class="row">
+                @Html.Partial("Partials/_ReviewList", Model)
+            </div>
+        </div>
+    </div>
+    <div class="col s3 push-s1">
+        <div id="right-sidebar" class="card centralized">
+            <div class="row"></div>
+            <p class="card-title flow-text">Menu</p>
+            <div class="collection with-header">
+                @Html.RouteLink("Main", new { controller = "Home", action = "Index"}, new {  @class = "collection-item" })
+                @Html.RouteLink("Guest", new { controller = "Guest", action = "Index" }, new { @class = "collection-item active" })
+                @Html.RouteLink("Quize", new { controller = "Quize", action = "Index" }, new { @class = "collection-item" })
+            </div>
+        </div>
+    </div>
+</div>
+
