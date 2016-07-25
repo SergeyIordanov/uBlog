@@ -60,6 +60,5 @@ namespace uBlog.WEB.Controllers
             var mapper = config.CreateMapper();
             return PartialView("Partials/_ArticleList", mapper.Map<IEnumerable<ArticleViewModel>>(_blogService.GetArticles()));
         }
-
     }
 }
