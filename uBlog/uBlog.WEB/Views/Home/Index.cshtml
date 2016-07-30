@@ -28,13 +28,20 @@
         </div>
     </div>
     <div class="col s3 push-s1">
-        <div id="right-sidebar" class="card centralized">
-            <div class="row"></div>
-            <p class="card-title flow-text">Menu</p>
-            <div class="collection with-header">
-                @Html.RouteLink("Main", new { controller = "Home", action = "Index" }, new { @class = "collection-item active" })
-                @Html.RouteLink("Guest", new { controller = "Guest", action = "Index" }, new { @class = "collection-item" })
-                @Html.RouteLink("Quize", new { controller = "Quize", action = "Index" }, new { @class = "collection-item" })
+        <div class="row">
+            <div id="right-sidebar" class="card centralized">
+                <div class="row"></div>
+                <p class="card-title flow-text">Menu</p>
+                <div class="collection with-header">
+                    @Html.RouteLink("Main", new {controller = "Home", action = "Index"}, new {@class = "collection-item active"})
+                    @Html.RouteLink("Guest", new {controller = "Guest", action = "Index"}, new {@class = "collection-item"})
+                    @Html.RouteLink("Quize", new {controller = "Quize", action = "Index"}, new {@class = "collection-item"})
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div id="poll-section" class="card centralized">
+                @Html.Action("Index", "Poll", new {id = 1})
             </div>
         </div>
     </div>

@@ -11,7 +11,7 @@ namespace uBlog.BLL.Services
 {
     public class BlogService : IBlogService
     {
-        IUnitOfWork Database { get; set; }
+        IUnitOfWork Database { get; }
 
         public BlogService(IUnitOfWork uow)
         {
@@ -89,6 +89,33 @@ namespace uBlog.BLL.Services
                 throw new ValidationException("UserInfo wasn't found", "");
             Mapper.Initialize(cfg => cfg.CreateMap<UserInfo, UserInfoDto>());
             return Mapper.Map<UserInfoDto>(userInfo);
+        }
+
+        public QuestionDto GetQuestion(int? id)
+        {
+            if (id == null)
+                throw new ValidationException("Question's id wasn't set", "");
+            var question = Database.Questions.Get(id.Value);
+            if (question == null)
+                throw new ValidationException("Question wasn't found", "");
+
+            var config = new MapperConfiguration(cfg => {
+                cfg.CreateMap<Question, QuestionDto>();
+                cfg.CreateMap<Answer, AnswerDto>();
+            });
+            var mapper = config.CreateMapper();
+            return mapper.Map<Question, QuestionDto>(question);
+        }
+
+        public void UpdateAnswer(AnswerDto answerDto)
+        {
+            if(Database.Answers.Get(answerDto.AnswerId) == null)
+                throw new ValidationException("Answer wasn't found", "");
+            Mapper.Initialize(cfg => cfg.CreateMap<AnswerDto, Answer>());
+            var answer = Mapper.Map<Answer>(answerDto);
+            Database.Answers.Update(answer);
+
+            Database.Save();
         }
 
         public void DeleteArticle(int? id)

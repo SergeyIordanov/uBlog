@@ -151,13 +151,16 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\GuestController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PollController.cs" />
     <Compile Include="Controllers\QuizeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\DropDownList.cs" />
     <Compile Include="Helpers\HtmlText.cs" />
+    <Compile Include="Models\AnswerViewModel.cs" />
     <Compile Include="Models\ArticleViewModel.cs" />
+    <Compile Include="Models\QuestionViewModel.cs" />
     <Compile Include="Models\ReviewViewModel.cs" />
     <Compile Include="Models\UserInfoViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -238,6 +241,7 @@
     <Content Include="Views\Guest\Partials\_ReviewForm.cshtml" />
     <Content Include="Views\Quize\QuizeResult.cshtml" />
     <Content Include="Views\Quize\Partials\_QuizeForm.cshtml" />
+    <Content Include="Views\Poll\_Poll.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

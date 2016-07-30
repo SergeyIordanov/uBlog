@@ -44,7 +44,7 @@ namespace uBlog.DAL.Repositories
 
         public void Delete(int id)
         {
-            Article article = db.Articles.Find(id);
+            var article = db.Articles.Find(id);
             if (article != null)
                 db.Articles.Remove(article);
         }

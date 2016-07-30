@@ -8,6 +8,8 @@ namespace uBlog.DAL.Interfaces
         IRepository<Article> Articles { get; }
         IRepository<Review> Reviewes { get; }
         IRepository<UserInfo> UserInfoes { get; }
+        IRepository<Question> Questions { get; }
+        IRepository<Answer> Answers { get; }
 
         void Save();
     }

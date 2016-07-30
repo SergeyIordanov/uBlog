@@ -8,9 +8,15 @@ namespace uBlog.BLL.Interfaces
         void CreateArticle(ArticleDto articleDto);
         void CreateReview(ReviewDto reviewDto);
         void CreateUserInfo(UserInfoDto userInfoDto);
+
         UserInfoDto GetUserInfo(int? id);
+        QuestionDto GetQuestion(int? id);
+
+        void UpdateAnswer(AnswerDto answerDto);
+
         void DeleteArticle(int? id);
         void DeleteReview(int? id);
+
         IEnumerable<ArticleDto> GetArticles();
         IEnumerable<ReviewDto> GetReviewes();
         void Dispose();

@@ -56,6 +56,44 @@ namespace uBlog.DAL.EF
                 },
             });
 
+            db.Questions.Add(new Question
+            {
+                QuestionId = 1,
+                Text = "What is your favourite programming language?"
+            });
+
+            db.Answers.AddRange(new[]
+            {
+                new Answer
+                {
+                    Text = "C#",
+                    QuestionId = 1,
+                    AnswerId = 1,
+                    VotesCount = 5
+                },
+                new Answer
+                {
+                    Text = "Java",
+                    QuestionId = 1,
+                    AnswerId = 2,
+                    VotesCount = 3
+                },
+                new Answer
+                {
+                    Text = "C++",
+                    QuestionId = 1,
+                    AnswerId = 3,
+                    VotesCount = 4
+                },
+                new Answer
+                {
+                    Text = "PHP",
+                    QuestionId = 1,
+                    AnswerId = 4,
+                    VotesCount = 1
+                },
+            });
+
             db.SaveChanges();
         }
     }
