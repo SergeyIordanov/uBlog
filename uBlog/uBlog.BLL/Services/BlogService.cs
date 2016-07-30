@@ -62,22 +62,27 @@ namespace uBlog.BLL.Services
                 throw new ValidationException("This property cannot be null", "Gender");
             if (userInfoDto.LastName == null)
                 throw new ValidationException("This property cannot be null", "LastName");
-            Mapper.Initialize(cfg => cfg.CreateMap<UserInfoDto, UserInfo>());
-            var userInfo = Mapper.Map<UserInfo>(userInfoDto);
+
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<UserInfoDto, UserInfo>());
+            var mapper = config.CreateMapper();
+            var userInfo = mapper.Map<UserInfo>(userInfoDto);
+
             Database.UserInfoes.Create(userInfo);
             Database.Save();
         }       
 
         public IEnumerable<ArticleDto> GetArticles()
         {
-            Mapper.Initialize(cfg => cfg.CreateMap<Article, ArticleDto>());
-            return Mapper.Map<IEnumerable<ArticleDto>>(Database.Articles.GetAll());
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<Article, ArticleDto>());
+            var mapper = config.CreateMapper();
+            return mapper.Map<IEnumerable<ArticleDto>>(Database.Articles.GetAll());
         }
 
         public IEnumerable<ReviewDto> GetReviewes()
         {
-            Mapper.Initialize(cfg => cfg.CreateMap<Review, ReviewDto>());
-            return Mapper.Map<IEnumerable<ReviewDto>>(Database.Reviewes.GetAll());
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<Review, ReviewDto>());
+            var mapper = config.CreateMapper();
+            return mapper.Map<IEnumerable<ReviewDto>>(Database.Reviewes.GetAll());
         }
 
         public UserInfoDto GetUserInfo(int? id)
@@ -87,8 +92,9 @@ namespace uBlog.BLL.Services
             var userInfo = Database.UserInfoes.Get(id.Value);
             if (userInfo == null)
                 throw new ValidationException("UserInfo wasn't found", "");
-            Mapper.Initialize(cfg => cfg.CreateMap<UserInfo, UserInfoDto>());
-            return Mapper.Map<UserInfoDto>(userInfo);
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<UserInfo, UserInfoDto>());
+            var mapper = config.CreateMapper();
+            return mapper.Map<UserInfoDto>(userInfo);
         }
 
         public QuestionDto GetQuestion(int? id)
@@ -111,8 +117,11 @@ namespace uBlog.BLL.Services
         {
             if(Database.Answers.Get(answerDto.AnswerId) == null)
                 throw new ValidationException("Answer wasn't found", "");
-            Mapper.Initialize(cfg => cfg.CreateMap<AnswerDto, Answer>());
-            var answer = Mapper.Map<Answer>(answerDto);
+
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<AnswerDto, Answer>());
+            var mapper = config.CreateMapper();
+            var answer = mapper.Map<Answer>(answerDto);
+
             Database.Answers.Update(answer);
 
             Database.Save();

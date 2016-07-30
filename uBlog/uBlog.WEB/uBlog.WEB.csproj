@@ -160,6 +160,7 @@
     <Compile Include="Helpers\HtmlText.cs" />
     <Compile Include="Models\AnswerViewModel.cs" />
     <Compile Include="Models\ArticleViewModel.cs" />
+    <Compile Include="Models\PollResultViewModel.cs" />
     <Compile Include="Models\QuestionViewModel.cs" />
     <Compile Include="Models\ReviewViewModel.cs" />
     <Compile Include="Models\UserInfoViewModel.cs" />
@@ -242,6 +243,7 @@
     <Content Include="Views\Quize\QuizeResult.cshtml" />
     <Content Include="Views\Quize\Partials\_QuizeForm.cshtml" />
     <Content Include="Views\Poll\_Poll.cshtml" />
+    <Content Include="Views\Poll\_PollResult.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System.Linq;
+using System.Web.Mvc;
 using AutoMapper;
 using uBlog.BLL.DataTransferObjects;
 using uBlog.BLL.Interfaces;
@@ -16,8 +17,12 @@ namespace uBlog.WEB.Controllers
         }
 
         [HttpGet]
-        public ActionResult Index(int id)
+        public ActionResult Index(int? id)
         {
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
             var config = new MapperConfiguration(cfg => {
                 cfg.CreateMap<QuestionDto, QuestionViewModel>();
                 cfg.CreateMap<AnswerDto, AnswerViewModel>();
@@ -28,21 +33,26 @@ namespace uBlog.WEB.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(QuestionViewModel question)
+        public ActionResult Index(int questionId, int answerId)
         {
+            var questionDto = _blogService.GetQuestion(questionId);
+
+            var answerDto = questionDto.Answers.First(x => x.AnswerId == answerId);
+            answerDto.VotesCount ++;
+            _blogService.UpdateAnswer(answerDto);
+
             var config = new MapperConfiguration(cfg => {
-                cfg.CreateMap<QuestionViewModel, QuestionDto>();
-                cfg.CreateMap<AnswerViewModel, AnswerDto>();
+                cfg.CreateMap<QuestionDto, QuestionViewModel>();
+                cfg.CreateMap<AnswerDto, AnswerViewModel>();
             });
             var mapper = config.CreateMapper();
-            var questionDto = mapper.Map<QuestionViewModel, QuestionDto>(question);
-
-            foreach (AnswerDto answerDto in questionDto.Answers)
+            var pollResult = new PollResultViewModel
             {
-                _blogService.UpdateAnswer(answerDto);
-            }
+                Question = mapper.Map<QuestionDto, QuestionViewModel>(questionDto),
+                AnswerId = answerId
+            };
 
-            return RedirectToAction("Index", question.QuestionId);
+            return PartialView("_PollResult", pollResult);
         }
     }
 }

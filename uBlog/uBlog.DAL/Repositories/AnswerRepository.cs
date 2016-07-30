@@ -39,7 +39,13 @@ namespace uBlog.DAL.Repositories
 
         public void Update(Answer answer)
         {
-            db.Entry(answer).State = EntityState.Modified;
+            //db.Entry(answer).State = EntityState.Modified;
+            var original = db.Answers.Find(answer.AnswerId);
+            if (original != null)
+            {
+                db.Entry(original).CurrentValues.SetValues(answer);
+                db.SaveChanges();
+            }
         }
 
         public void Delete(int id)

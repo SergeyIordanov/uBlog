@@ -1,4 +1,16 @@
 ﻿@model uBlog.WEB.Models.QuestionViewModel
 
-
-<p>Poll'll be here!</p>
+<div class="row">
+    <div class="col s12">
+        <p class="card-title flow-text centralized">Poll</p>
+        <hr class="colored-hr"/>
+        <p class="flow-text question-text">@Model.Text</p>
+        <div class="collection with-header">
+            @foreach (var answer in Model.Answers)
+            {               
+                @Ajax.ActionLink(answer.Text, "Index", new {controller = "Poll", questionId = Model.QuestionId, answerId = answer.AnswerId},  
+                    new AjaxOptions {HttpMethod = "post", UpdateTargetId = "poll-section"}, new { @class = "collection-item" })
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+﻿@model uBlog.WEB.Models.PollResultViewModel
+
+<div class="row">
+    <div class="col s12">
+        <p class="card-title flow-text centralized">Poll</p>
+        <hr class="colored-hr" />
+        <p class="flow-text question-text">@Model.Question.Text</p>
+        <ul class="collection">
+            @foreach (var answer in Model.Question.Answers)
+            {
+                if (answer.AnswerId == Model.AnswerId)
+                {
+                    <li class="collection-item red-text">@answer.Text (@answer.VotesCount) - your choice</li>
+                }
+                else
+                {
+                    <li class="collection-item">@answer.Text (@answer.VotesCount)</li>
+                }
+            }
+        </ul>
+    </div>
+</div>
