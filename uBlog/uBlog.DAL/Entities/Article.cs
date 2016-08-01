@@ -13,6 +13,6 @@ namespace uBlog.DAL.Entities
 
         public DateTime PublishDate { get; set; }
 
-        public ICollection<Tag> Tags { get; set; }
+        public virtual ICollection<Tag> Tags { get; set; }
     }
 }

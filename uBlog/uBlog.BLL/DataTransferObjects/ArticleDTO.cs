@@ -13,6 +13,11 @@ namespace uBlog.BLL.DataTransferObjects
 
         public DateTime PublishDate { get; set; }
 
-        public ICollection<TagDto> Tags { get; set; }
+        public List<string> Tags { get; set; }
+
+        public ArticleDto()
+        {
+            Tags = new List<string>();
+        }
     }
 }

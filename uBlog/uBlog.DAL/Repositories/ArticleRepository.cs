@@ -18,11 +18,11 @@ namespace uBlog.DAL.Repositories
 
         public IEnumerable<Article> GetAll()
         {
-            return _db.Articles;
+            return _db.Articles.ToList();
         }
 
         public Article Get(int id)
-        {
+        {            
             return _db.Articles.Find(id);
         }
 

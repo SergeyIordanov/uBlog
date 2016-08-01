@@ -56,7 +56,6 @@
     <Compile Include="DataTransferObjects\ArticleDto.cs" />
     <Compile Include="DataTransferObjects\QuestionDto.cs" />
     <Compile Include="DataTransferObjects\ReviewDto.cs" />
-    <Compile Include="DataTransferObjects\TagDto.cs" />
     <Compile Include="DataTransferObjects\UserInfoDto.cs" />
     <Compile Include="Infrastructure\ServiceModule.cs" />
     <Compile Include="Infrastructure\ValidationException.cs" />

@@ -18,7 +18,7 @@ namespace uBlog.DAL.Repositories
 
         public IEnumerable<Tag> GetAll()
         {
-            return _db.Tags;
+            return _db.Tags.ToList();
         }
 
         public Tag Get(int id)

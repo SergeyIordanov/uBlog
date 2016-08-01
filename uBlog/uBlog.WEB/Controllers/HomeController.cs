@@ -23,7 +23,6 @@ namespace uBlog.WEB.Controllers
             var config = new MapperConfiguration(cfg =>
             {
                 cfg.CreateMap<ArticleDto, ArticleViewModel>();
-                cfg.CreateMap<TagDto, TagViewModel>();
             });
             var mapper = config.CreateMapper();
             return View(mapper.Map<IEnumerable<ArticleViewModel>>(_blogService.GetArticles()));
@@ -35,12 +34,10 @@ namespace uBlog.WEB.Controllers
             var configView = new MapperConfiguration(cfg =>
             {
                 cfg.CreateMap<ArticleDto, ArticleViewModel>();
-                cfg.CreateMap<TagDto, TagViewModel>();
             });
             var configDto = new MapperConfiguration(cfg =>
             {
                 cfg.CreateMap<ArticleViewModel, ArticleDto>();
-                cfg.CreateMap<TagViewModel, TagDto>();
             });
             var mapper = configDto.CreateMapper();
 
@@ -73,7 +70,6 @@ namespace uBlog.WEB.Controllers
                 var config = new MapperConfiguration(cfg =>
                 {
                     cfg.CreateMap<ArticleDto, ArticleViewModel>();
-                    cfg.CreateMap<TagDto, TagViewModel>();
                 });
                 var mapper = config.CreateMapper();
                 return View(mapper.Map<ArticleViewModel>(article));
@@ -98,7 +94,6 @@ namespace uBlog.WEB.Controllers
                 var config = new MapperConfiguration(cfg =>
                 {
                     cfg.CreateMap<ArticleDto, ArticleViewModel>();
-                    cfg.CreateMap<TagDto, TagViewModel>();
                 });
                 var mapper = config.CreateMapper();
                 return PartialView("Partials/_ArticleList",

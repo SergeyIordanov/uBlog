@@ -31,7 +31,6 @@ namespace uBlog.BLL.Services
             Mapper.Initialize(cfg =>
             {
                 cfg.CreateMap<ArticleDto, Article>();
-                cfg.CreateMap<TagDto, Tag>();
             });
             var article = Mapper.Map<Article>(articleDto);
             Database.Articles.Create(article);
@@ -79,11 +78,20 @@ namespace uBlog.BLL.Services
         {
             var config = new MapperConfiguration(cfg =>
             {
-                cfg.CreateMap<Article, ArticleDto>();
-                cfg.CreateMap<Tag, TagDto>();
+                cfg.CreateMap<Article, ArticleDto>().ForMember(a => a.Tags, o => o.Ignore());
             });
             var mapper = config.CreateMapper();
-            return mapper.Map<IEnumerable<ArticleDto>>(Database.Articles.GetAll());
+            var articles = Database.Articles.GetAll().ToList();
+            var articlesDto = mapper.Map<IEnumerable<ArticleDto>>(Database.Articles.GetAll()).ToList();
+            for (int i = 0; i < articles.Count(); i++)
+            {
+                foreach (var tag in articles[i].Tags)
+                {
+                    articlesDto[i].Tags.Add(tag.Text);
+                }
+            }
+
+            return articlesDto;
         }
 
         public IEnumerable<ReviewDto> GetReviewes()
@@ -131,11 +139,15 @@ namespace uBlog.BLL.Services
 
             var config = new MapperConfiguration(cfg =>
             {
-                cfg.CreateMap<Article, ArticleDto>();
-                cfg.CreateMap<Tag, TagDto>();
+                cfg.CreateMap<Article, ArticleDto>().ForMember(a => a.Tags, o => o.Ignore());
             });
             var mapper = config.CreateMapper();
-            return mapper.Map<Article, ArticleDto>(article);
+            var articleDto = mapper.Map<Article, ArticleDto>(article);
+            foreach (var tag in article.Tags)
+            {
+                articleDto.Tags.Add(tag.Text);
+            }
+            return articleDto;
         }
 
         public void UpdateAnswer(AnswerDto answerDto)

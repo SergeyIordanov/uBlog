@@ -60,3 +60,11 @@
 .article-title:hover {
     text-decoration: underline;    
 }
+
+.tag-text {
+    font-size: 20px;
+}
+
+.tag-item:hover {
+    text-decoration: underline;    
+}

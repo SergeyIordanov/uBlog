@@ -20,6 +20,11 @@ namespace uBlog.WEB.Models
         [Required]
         public DateTime PublishDate { get; set; }
 
-        public virtual ICollection<TagViewModel> Tags { get; set; }
+        public List<string> Tags { get; set; }
+
+        public ArticleViewModel()
+        {
+            Tags = new List<string>();
+        }
     }
 }
