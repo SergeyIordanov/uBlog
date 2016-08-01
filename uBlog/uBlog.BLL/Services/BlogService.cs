@@ -30,9 +30,25 @@ namespace uBlog.BLL.Services
                 throw new ValidationException("This property cannot be null", "PublishDate");
             Mapper.Initialize(cfg =>
             {
-                cfg.CreateMap<ArticleDto, Article>();
+                cfg.CreateMap<ArticleDto, Article>().ForMember(a => a.Tags, o => o.Ignore());
             });
             var article = Mapper.Map<Article>(articleDto);
+
+            var allTags = Database.Tags.GetAll().ToList();
+            foreach (var tag in articleDto.Tags)
+            {
+                var newTag = new Tag { Text = tag };
+                if (allTags.Find(x => x.Text.Equals(newTag.Text)) != null)
+                {
+                    article.Tags.Add(allTags.First(x => x.Text.Equals(newTag.Text)));
+                }
+                else
+                {
+                    Database.Tags.Create(newTag);
+                    article.Tags.Add(newTag);                   
+                }
+            }
+
             Database.Articles.Create(article);
             Database.Save();
         }

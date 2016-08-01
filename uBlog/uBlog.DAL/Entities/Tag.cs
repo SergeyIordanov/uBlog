@@ -8,6 +8,11 @@ namespace uBlog.DAL.Entities
 
         public string Text { get; set; }
 
-        public virtual ICollection<Article> Articles { get; set; }  
+        public virtual ICollection<Article> Articles { get; set; }
+
+        public Tag()
+        {
+            Articles = new List<Article>();
+        }
     }
 }

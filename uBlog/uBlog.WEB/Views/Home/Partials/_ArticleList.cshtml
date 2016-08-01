@@ -39,10 +39,10 @@ else
                                     }
                                     else
                                     {
-                                        @Html.WriteHtml(text.Replace("☼", "<br>") + " ")
+                                        @Html.WriteHtml( "<p>" + text.Replace("☼", "<br>") + " </p>")
                                     }
-                                }                                                       
-                                @Html.ActionLink("show more", "ShowArticle", new {controller = "Home", id = item.ArticleId})
+                                }
+                                @Html.ActionLink("show more", "ShowArticle", new { controller = "Home", id = item.ArticleId })
                             </div>
                         </div>
                         <div class="row">

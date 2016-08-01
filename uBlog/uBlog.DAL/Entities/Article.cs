@@ -14,5 +14,10 @@ namespace uBlog.DAL.Entities
         public DateTime PublishDate { get; set; }
 
         public virtual ICollection<Tag> Tags { get; set; }
+
+        public Article()
+        {
+            Tags = new List<Tag>();
+        }
     }
 }

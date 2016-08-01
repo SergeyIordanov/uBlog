@@ -1,11 +1,14 @@
 ﻿using AutoMapper;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
+using Microsoft.Ajax.Utilities;
 using uBlog.BLL.DataTransferObjects;
 using uBlog.BLL.Infrastructure;
 using uBlog.BLL.Interfaces;
 using uBlog.WEB.Models;
+using static System.String;
 
 namespace uBlog.WEB.Controllers
 {
@@ -44,6 +47,16 @@ namespace uBlog.WEB.Controllers
             try
             {
                 article.PublishDate = DateTime.UtcNow;
+                if (article.Tags != null && article.Tags.Count > 0)
+                {
+                    var tags = article.Tags.FirstOrDefault().Split(' ');
+                    article.Tags.Clear();
+                    foreach (var tag in tags)
+                    {
+                        if(tag.Trim() == Empty) continue;
+                        article.Tags.Add(tag.Trim());
+                    }
+                }
                 var articleDto = mapper.Map<ArticleDto>(article);
                 _blogService.CreateArticle(articleDto);
             }
