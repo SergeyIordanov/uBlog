@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using uBlog.DAL.EF;
 using uBlog.DAL.Entities;
@@ -34,7 +33,13 @@ namespace uBlog.DAL.Repositories
 
         public void Update(Review review)
         {
-            _db.Entry(review).State = EntityState.Modified;
+            //_db.Entry(review).State = EntityState.Modified;
+            var original = _db.Reviewes.Find(review.ReviewId);
+            if (original != null)
+            {
+                _db.Entry(original).CurrentValues.SetValues(review);
+                _db.SaveChanges();
+            }
         }
 
         public IEnumerable<Review> Find(Func<Review, bool> predicate)

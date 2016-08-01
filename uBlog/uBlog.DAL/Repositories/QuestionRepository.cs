@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using uBlog.DAL.EF;
 using uBlog.DAL.Entities;
@@ -11,43 +10,49 @@ namespace uBlog.DAL.Repositories
     class QuestionRepository : IRepository<Question>
     {
 
-        private BlogContext db;
+        private readonly BlogContext _db;
 
         public QuestionRepository(BlogContext context)
         {
-            db = context;
+            _db = context;
         }
 
         public IEnumerable<Question> GetAll()
         {
-            return db.Questions;
+            return _db.Questions;
         }
 
         public Question Get(int id)
         {
-            return db.Questions.Find(id);
+            return _db.Questions.Find(id);
         }
 
         public IEnumerable<Question> Find(Func<Question, bool> predicate)
         {
-            return db.Questions.Where(predicate).ToList();
+            return _db.Questions.Where(predicate).ToList();
         }
 
         public void Create(Question question)
         {
-            db.Questions.Add(question);
+            _db.Questions.Add(question);
         }
 
         public void Update(Question question)
         {
-            db.Entry(question).State = EntityState.Modified;
+            //db.Entry(question).State = EntityState.Modified;
+            var original = _db.Questions.Find(question.QuestionId);
+            if (original != null)
+            {
+                _db.Entry(original).CurrentValues.SetValues(question);
+                _db.SaveChanges();
+            }
         }
 
         public void Delete(int id)
         {
-            var question = db.Questions.Find(id);
+            var question = _db.Questions.Find(id);
             if (question != null)
-                db.Questions.Remove(question);
+                _db.Questions.Remove(question);
         }
     }
 }

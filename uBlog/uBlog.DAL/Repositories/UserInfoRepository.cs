@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using uBlog.DAL.EF;
 using uBlog.DAL.Entities;
@@ -10,43 +9,49 @@ namespace uBlog.DAL.Repositories
 {
     public class UserInfoRepository : IRepository<UserInfo>
     {
-        private BlogContext db;
+        private readonly BlogContext _db;
 
         public UserInfoRepository(BlogContext context)
         {
-            db = context;
+            _db = context;
         }
 
         public IEnumerable<UserInfo> GetAll()
         {
-            return db.UserInfoes;
+            return _db.UserInfoes;
         }
 
         public UserInfo Get(int id)
         {
-            return db.UserInfoes.Find(id);
+            return _db.UserInfoes.Find(id);
         }
 
         public void Create(UserInfo userInfo)
         {
-            db.UserInfoes.Add(userInfo);
+            _db.UserInfoes.Add(userInfo);
         }
 
         public void Update(UserInfo userInfo)
         {
-            db.Entry(userInfo).State = EntityState.Modified;
+            //_db.Entry(userInfo).State = EntityState.Modified;
+            var original = _db.UserInfoes.Find(userInfo.UserInfoId);
+            if (original != null)
+            {
+                _db.Entry(original).CurrentValues.SetValues(userInfo);
+                _db.SaveChanges();
+            }
         }
 
         public IEnumerable<UserInfo> Find(Func<UserInfo, bool> predicate)
         {
-            return db.UserInfoes.Where(predicate).ToList();
+            return _db.UserInfoes.Where(predicate).ToList();
         }
 
         public void Delete(int id)
         {
-            UserInfo userInfo = db.UserInfoes.Find(id);
+            UserInfo userInfo = _db.UserInfoes.Find(id);
             if (userInfo != null)
-                db.UserInfoes.Remove(userInfo);
+                _db.UserInfoes.Remove(userInfo);
         }
     }
 }
