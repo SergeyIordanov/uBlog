@@ -10,6 +10,7 @@ namespace uBlog.DAL.EF
         public DbSet<UserInfo> UserInfoes { get; set; }
         public DbSet<Question> Questions { get; set; }
         public DbSet<Answer> Answers { get; set; }
+        public DbSet<Tag> Tags { get; set; }
 
         static BlogContext()
         {
@@ -19,6 +20,15 @@ namespace uBlog.DAL.EF
         public BlogContext(string connectionString)
             : base(connectionString)
         {
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Article>().HasMany(c => c.Tags)
+                .WithMany(s => s.Articles)
+                .Map(t => t.MapLeftKey("ArticleId")
+                .MapRightKey("TagId")
+                .ToTable("ArticleTag"));
         }
     }
 }

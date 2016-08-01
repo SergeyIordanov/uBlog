@@ -28,7 +28,11 @@ namespace uBlog.BLL.Services
                 throw new ValidationException("This property cannot be null", "Title");
             if (articleDto.PublishDate == null)
                 throw new ValidationException("This property cannot be null", "PublishDate");
-            Mapper.Initialize(cfg => cfg.CreateMap<ArticleDto, Article>());
+            Mapper.Initialize(cfg =>
+            {
+                cfg.CreateMap<ArticleDto, Article>();
+                cfg.CreateMap<TagDto, Tag>();
+            });
             var article = Mapper.Map<Article>(articleDto);
             Database.Articles.Create(article);
             Database.Save();
@@ -73,7 +77,11 @@ namespace uBlog.BLL.Services
 
         public IEnumerable<ArticleDto> GetArticles()
         {
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<Article, ArticleDto>());
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<Article, ArticleDto>();
+                cfg.CreateMap<Tag, TagDto>();
+            });
             var mapper = config.CreateMapper();
             return mapper.Map<IEnumerable<ArticleDto>>(Database.Articles.GetAll());
         }
@@ -121,7 +129,11 @@ namespace uBlog.BLL.Services
             if (article == null)
                 throw new ValidationException("Article wasn't found", "");
 
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<Article, ArticleDto>());
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<Article, ArticleDto>();
+                cfg.CreateMap<Tag, TagDto>();
+            });
             var mapper = config.CreateMapper();
             return mapper.Map<Article, ArticleDto>(article);
         }

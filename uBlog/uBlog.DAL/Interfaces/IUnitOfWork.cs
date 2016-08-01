@@ -10,6 +10,7 @@ namespace uBlog.DAL.Interfaces
         IRepository<UserInfo> UserInfoes { get; }
         IRepository<Question> Questions { get; }
         IRepository<Answer> Answers { get; }
+        IRepository<Tag> Tags { get; }
 
         void Save();
     }

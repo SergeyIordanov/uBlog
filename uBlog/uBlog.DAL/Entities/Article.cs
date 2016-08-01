@@ -1,5 +1,5 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
 
 namespace uBlog.DAL.Entities
 {
@@ -12,5 +12,7 @@ namespace uBlog.DAL.Entities
         public string Text { get; set; }
 
         public DateTime PublishDate { get; set; }
+
+        public ICollection<Tag> Tags { get; set; }
     }
 }

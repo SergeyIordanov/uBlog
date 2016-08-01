@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using uBlog.DAL.Entities;
 
@@ -8,6 +9,21 @@ namespace uBlog.DAL.EF
     {
         protected override void Seed(BlogContext db)
         {
+            var tags = new List<Tag>
+            {
+                new Tag {TagId = 1, Text = "thoughts"},
+                new Tag {TagId = 2, Text = "C#"},
+                new Tag {TagId = 3, Text = ".NET"},
+                new Tag {TagId = 4, Text = "Microsoft"},
+                new Tag {TagId = 5, Text = "blog"},
+                new Tag {TagId = 6, Text = "news"},
+                new Tag {TagId = 7, Text = "greatings"},
+                new Tag {TagId = 8, Text = "test"},
+                new Tag {TagId = 9, Text = "it"}
+            };
+
+            db.Tags.AddRange(tags);
+
             db.Articles.AddRange(new[] {
                 new Article()
                 {
@@ -15,7 +31,8 @@ namespace uBlog.DAL.EF
                     Title = "The First Article",
                     Text = "Dear Readers,\r\nWe are glad to see you in our minimalistic blog calling 'uBlog'!\r\n" +
                         "It's the first step in our long fantastic journey. Hope you'll stay with us!\r\n\r\nGood luck!",
-                    PublishDate = DateTime.UtcNow.AddHours(-5)
+                    PublishDate = DateTime.UtcNow.AddHours(-5),
+                    Tags = new List<Tag> { tags[7], tags[6], tags[4] }
                 },
                 new Article()
                 {
@@ -23,7 +40,8 @@ namespace uBlog.DAL.EF
                     Title = "Hot News!",
                     Text = "Hello, everybody!\r\nI just need to say you that I'am the only one person who reads this articles.. and writes it.\r\n" +
                         "Maybe I should rename this blog for 'uDiary'? Or it's just a schizophrenia?\r\n\r\nAnyway, stay awesome, bros!",
-                    PublishDate = DateTime.UtcNow.AddHours(-3)
+                    PublishDate = DateTime.UtcNow.AddHours(-3),
+                    Tags = new List<Tag> { tags[0], tags[5], tags[4], tags[7] }
                 },
                 new Article()
                 {
@@ -31,7 +49,8 @@ namespace uBlog.DAL.EF
                     Title = "Very Interesting Article",
                     Text = "Hi, guys!\r\nThis article was writen just for testing 'uBlog'. There is no usefull information for you, " +
                         "but we need at least three articles to be sure that our blog is exactly the same like we saw it!\r\n\r\nStay awesome, bros!",
-                    PublishDate = DateTime.UtcNow.AddHours(-2)
+                    PublishDate = DateTime.UtcNow.AddHours(-2),
+                    Tags = new List<Tag> {tags[5], tags[4], tags[7] }
                 },
                 new Article()
                 {
@@ -53,7 +72,8 @@ namespace uBlog.DAL.EF
                         "\r\nThe bottom line is that.NET Core is a step in the progress of the Open Sourcing of selected Microsoft technologies and as such we should celebrate." +
                         "\r\nShould you rush off, download it and get programming ?" +
                         "\r\nProbably not.",
-                    PublishDate = DateTime.UtcNow.AddHours(-2)
+                    PublishDate = DateTime.UtcNow.AddHours(-2),
+                    Tags = new List<Tag> {tags[5], tags[1], tags[2], tags[3], tags[8] }
                 },
             });
 

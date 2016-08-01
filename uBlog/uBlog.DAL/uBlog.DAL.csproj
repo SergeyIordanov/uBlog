@@ -53,6 +53,7 @@
     <Compile Include="EF\BlogDbInitializer.cs" />
     <Compile Include="Entities\Answer.cs" />
     <Compile Include="Entities\Question.cs" />
+    <Compile Include="Entities\Tag.cs" />
     <Compile Include="Repositories\AnswerRepository.cs" />
     <Compile Include="Repositories\BlogUnitOfWork.cs" />
     <Compile Include="Entities\Article.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="Repositories\ArticleRepository.cs" />
     <Compile Include="Repositories\QuestionRepository.cs" />
     <Compile Include="Repositories\ReviewRepository.cs" />
+    <Compile Include="Repositories\TagRepository.cs" />
     <Compile Include="Repositories\UserInfoRepository.cs" />
   </ItemGroup>
   <ItemGroup>

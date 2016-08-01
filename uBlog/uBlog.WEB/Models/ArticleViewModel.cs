@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
@@ -18,5 +19,7 @@ namespace uBlog.WEB.Models
         [DisplayName("Date of publishing")]
         [Required]
         public DateTime PublishDate { get; set; }
+
+        public virtual ICollection<TagViewModel> Tags { get; set; }
     }
 }

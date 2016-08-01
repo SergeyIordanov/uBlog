@@ -13,6 +13,7 @@ namespace uBlog.DAL.Repositories
         private UserInfoRepository _userInfoRepository;
         private QuestionRepository _questionRepository;
         private AnswerRepository _answerRepository;
+        private TagRepository _tagRepository;
 
         public BlogUnitOfWork(string connectionString)
         {
@@ -33,6 +34,9 @@ namespace uBlog.DAL.Repositories
 
         public IRepository<Answer> Answers
             => _answerRepository ?? (_answerRepository = new AnswerRepository(_db));
+
+        public IRepository<Tag> Tags
+            => _tagRepository ?? (_tagRepository = new TagRepository(_db));
 
         public void Save()
         {

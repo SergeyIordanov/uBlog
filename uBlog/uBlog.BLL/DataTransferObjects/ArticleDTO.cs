@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace uBlog.BLL.DataTransferObjects
 {
@@ -11,5 +12,7 @@ namespace uBlog.BLL.DataTransferObjects
         public string Text { get; set; }
 
         public DateTime PublishDate { get; set; }
+
+        public ICollection<TagDto> Tags { get; set; }
     }
 }
