@@ -163,6 +163,7 @@
     <Compile Include="Models\PollResultViewModel.cs" />
     <Compile Include="Models\QuestionViewModel.cs" />
     <Compile Include="Models\ReviewViewModel.cs" />
+    <Compile Include="Models\SearchByTagViewModel.cs" />
     <Compile Include="Models\UserInfoViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\NinjectDependencyResolver.cs" />
@@ -246,6 +247,7 @@
     <Content Include="Views\Poll\_PollResult.cshtml" />
     <Content Include="Views\Home\ShowArticle.cshtml" />
     <Content Include="Views\Shared\_ErrorPartial.cshtml" />
+    <Content Include="Views\Home\SearchByTag.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

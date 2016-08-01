@@ -94,6 +94,31 @@ namespace uBlog.WEB.Controllers
             
         }
 
+        [HttpGet]
+        public ActionResult SearchByTag(string tag)
+        {
+            if (tag == null)
+            {
+                tag = "";
+            }
+            try
+            {
+                var articles = _blogService.GetArticles(tag);
+                var config = new MapperConfiguration(cfg =>
+                {
+                    cfg.CreateMap<ArticleDto, ArticleViewModel>();
+                });
+                var mapper = config.CreateMapper();
+                var articlesView = mapper.Map<IEnumerable<ArticleViewModel>>(articles);
+                return View(new SearchByTagViewModel { Articles = articlesView.ToList(), TagText = tag });
+            }
+            catch (ValidationException ex)
+            {
+                return View("Error", ex);
+            }
+
+        }
+
         [HttpPost]
         public ActionResult Delete(int? id)
         {

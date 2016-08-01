@@ -15,7 +15,7 @@
                     <img src="~/Content/Images/article.png" height="100" width="100" alt="" class="circle responsive-img">
                 </div>
                 <div class="col s8 push-s1 centralized">
-                    <p class="flow-text black-text article-title">@Model.Title</p>
+                    <p class="flow-text black-text">@Model.Title</p>
                     <hr class="colored-hr no-margin-vert" />
                 </div>
             </div>
@@ -27,7 +27,7 @@
                         {
                             foreach (var tag in Model.Tags)
                             {
-                                <a href="~/Home/SearchByTag/@tag" class="main-color-text tag-item">@(tag)</a> 
+                                <a href="~/Home/SearchByTag?tag=@tag" class="main-color-text tag-item">@(tag)</a> 
                                 <span class="flow-text"> | </span>                               
                             }
                         }

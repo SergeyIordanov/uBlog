@@ -18,6 +18,8 @@ namespace uBlog.BLL.Services
             Database = uow;
         }
 
+        #region Create
+
         public void CreateArticle(ArticleDto articleDto)
         {
             if(articleDto == null)
@@ -67,7 +69,7 @@ namespace uBlog.BLL.Services
             var review = Mapper.Map<Review>(reviewDto);
             Database.Reviewes.Create(review);
             Database.Save();
-        }
+        }       
 
         public void CreateUserInfo(UserInfoDto userInfoDto)
         {
@@ -88,7 +90,11 @@ namespace uBlog.BLL.Services
 
             Database.UserInfoes.Create(userInfo);
             Database.Save();
-        }       
+        }
+
+        #endregion
+
+        #region Get
 
         public IEnumerable<ArticleDto> GetArticles()
         {
@@ -104,6 +110,31 @@ namespace uBlog.BLL.Services
                 foreach (var tag in articles[i].Tags)
                 {
                     articlesDto[i].Tags.Add(tag.Text);
+                }
+            }
+
+            return articlesDto;
+        }
+
+        public IEnumerable<ArticleDto> GetArticles(string tagName)
+        {
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<Article, ArticleDto>().ForMember(a => a.Tags, o => o.Ignore());
+            });
+            var mapper = config.CreateMapper();
+
+            var tag = Database.Tags.Find(x => x.Text.Equals(tagName)).FirstOrDefault();
+
+            if (tag == null)
+                return new List<ArticleDto>();
+
+            var articlesDto = mapper.Map<IEnumerable<ArticleDto>>(tag.Articles.ToList()).ToList();
+            for (int i = 0; i < tag.Articles.ToList().Count(); i++)
+            {
+                foreach (var innerTag in tag.Articles.ToList()[i].Tags)
+                {
+                    articlesDto[i].Tags.Add(innerTag.Text);
                 }
             }
 
@@ -166,6 +197,10 @@ namespace uBlog.BLL.Services
             return articleDto;
         }
 
+        #endregion
+
+        #region Update
+
         public void UpdateAnswer(AnswerDto answerDto)
         {
             if(Database.Answers.Get(answerDto.AnswerId) == null)
@@ -179,6 +214,10 @@ namespace uBlog.BLL.Services
 
             Database.Save();
         }
+
+        #endregion
+
+        #region Delete
 
         public void DeleteArticle(int? id)
         {
@@ -199,6 +238,8 @@ namespace uBlog.BLL.Services
             Database.Reviewes.Delete((int)id);
             Database.Save();
         }
+
+        #endregion
 
         public void Dispose()
         {

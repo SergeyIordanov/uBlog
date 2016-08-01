@@ -19,6 +19,7 @@ namespace uBlog.BLL.Interfaces
         void DeleteReview(int? id);
 
         IEnumerable<ArticleDto> GetArticles();
+        IEnumerable<ArticleDto> GetArticles(string tagText);
         IEnumerable<ReviewDto> GetReviewes();
         void Dispose();
     }

@@ -1,0 +1,55 @@
+﻿@model uBlog.WEB.Models.SearchByTagViewModel
+@{
+    ViewBag.Title = "Search";
+}
+
+<div class="row no-margin-bot">
+    <div class="col s7 push-s1">
+        <div id="main-body" class="card">
+            <div class="row"></div>
+            <p class="flow-text welcome-text centralized">Search by tags</p>
+
+            <hr class="colored-hr no-margin-vert"/>
+
+            @using (Html.BeginForm("SearchByTag", "Home", FormMethod.Get))
+            {
+                <div class="row">
+                    <div class="input-field col s10 push-s1">
+                        <label for="tag">Tag:</label>
+                        <input class="text-box single-line" id="tag" name="tag" type="text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s10 push-s1 centralized">
+                        <input class="btn btn-default" name="submit" type="submit" value="Search">
+                    </div>
+                </div>
+            }
+            <hr class="colored-hr no-margin-vert" />
+            <div class="row">
+                <div class="col s10 push-s1">
+                    <p class="flow-text centralized">Results for '@Model.TagText'</p>
+                </div>
+            </div>
+            
+            <div id="article_target" class="row">
+                @Html.Partial("Partials/_ArticleList", Model.Articles)
+            </div>
+
+        </div>
+    </div>
+    <div class="col s3 push-s1">
+        <div class="row">
+            <div id="right-sidebar" class="card centralized">
+                <div class="row"></div>
+                <p class="card-title flow-text">Menu</p>
+                <div class="collection with-header">
+                    @Html.RouteLink("Main", new { controller = "Home", action = "Index" }, new { @class = "collection-item" })
+                    @Html.RouteLink("Guest", new { controller = "Guest", action = "Index" }, new { @class = "collection-item" })
+                    @Html.RouteLink("Quize", new { controller = "Quize", action = "Index" }, new { @class = "collection-item" })
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
