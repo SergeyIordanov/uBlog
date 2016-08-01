@@ -52,3 +52,11 @@
 .question-text {
     font-size: 20px;
 }
+
+.main-color-text {
+    color: rgb(38, 166, 154);
+}
+
+.article-title:hover {
+    text-decoration: underline;    
+}

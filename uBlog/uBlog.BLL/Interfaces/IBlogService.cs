@@ -11,6 +11,7 @@ namespace uBlog.BLL.Interfaces
 
         UserInfoDto GetUserInfo(int? id);
         QuestionDto GetQuestion(int? id);
+        ArticleDto GetArticle(int? id);
 
         void UpdateAnswer(AnswerDto answerDto);
 

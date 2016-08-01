@@ -48,17 +48,47 @@ namespace uBlog.WEB.Controllers
             return PartialView("Partials/_ArticleList", model);
         }
 
+        [HttpGet]
+        public ActionResult ShowArticle(int? id)
+        {
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
+            try
+            {
+                var article = _blogService.GetArticle(id);
+                var config = new MapperConfiguration(cfg => cfg.CreateMap<ArticleDto, ArticleViewModel>());
+                var mapper = config.CreateMapper();
+                return View(mapper.Map<ArticleViewModel>(article));
+            }
+            catch (ValidationException ex)
+            {
+                return View("Error", ex);
+            }
+            
+        }
+
         [HttpPost]
         public ActionResult Delete(int? id)
         {
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
             try
             {
                 _blogService.DeleteArticle(id);
+                var config = new MapperConfiguration(cfg => cfg.CreateMap<ArticleDto, ArticleViewModel>());
+                var mapper = config.CreateMapper();
+                return PartialView("Partials/_ArticleList",
+                    mapper.Map<IEnumerable<ArticleViewModel>>(_blogService.GetArticles()));
             }
-            catch (ValidationException){ }
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<ArticleDto, ArticleViewModel>());
-            var mapper = config.CreateMapper();
-            return PartialView("Partials/_ArticleList", mapper.Map<IEnumerable<ArticleViewModel>>(_blogService.GetArticles()));
+            catch (ValidationException ex)
+            {
+                return PartialView("_ErrorPartial", ex);
+            }
+            
         }
     }
 }

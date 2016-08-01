@@ -244,6 +244,8 @@
     <Content Include="Views\Quize\Partials\_QuizeForm.cshtml" />
     <Content Include="Views\Poll\_Poll.cshtml" />
     <Content Include="Views\Poll\_PollResult.cshtml" />
+    <Content Include="Views\Home\ShowArticle.cshtml" />
+    <Content Include="Views\Shared\_ErrorPartial.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

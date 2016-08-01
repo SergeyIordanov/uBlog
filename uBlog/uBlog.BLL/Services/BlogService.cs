@@ -113,6 +113,19 @@ namespace uBlog.BLL.Services
             return mapper.Map<Question, QuestionDto>(question);
         }
 
+        public ArticleDto GetArticle(int? id)
+        {
+            if (id == null)
+                throw new ValidationException("Article's id wasn't set", "");
+            var article = Database.Articles.Get(id.Value);
+            if (article == null)
+                throw new ValidationException("Article wasn't found", "");
+
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<Article, ArticleDto>());
+            var mapper = config.CreateMapper();
+            return mapper.Map<Article, ArticleDto>(article);
+        }
+
         public void UpdateAnswer(AnswerDto answerDto)
         {
             if(Database.Answers.Get(answerDto.AnswerId) == null)
