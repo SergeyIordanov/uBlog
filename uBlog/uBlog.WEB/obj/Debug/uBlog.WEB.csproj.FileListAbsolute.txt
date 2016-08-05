@@ -169,3 +169,5 @@ C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog\uBlog.WEB\bin\uBlog.DAL.pdb
 C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog\uBlog.WEB\obj\Debug\uBlog.WEB.csprojResolveAssemblyReference.cache
 C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog\uBlog.WEB\obj\Debug\uBlog.WEB.dll
 C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog\uBlog.WEB\obj\Debug\uBlog.WEB.pdb
+C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog\uBlog.WEB\bin\uBlog.Entities.dll
+C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog\uBlog.WEB\bin\uBlog.Entities.pdb

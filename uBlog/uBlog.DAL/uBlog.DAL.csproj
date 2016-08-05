@@ -51,14 +51,8 @@
   <ItemGroup>
     <Compile Include="EF\BlogContext.cs" />
     <Compile Include="EF\BlogDbInitializer.cs" />
-    <Compile Include="Entities\Answer.cs" />
-    <Compile Include="Entities\Question.cs" />
-    <Compile Include="Entities\Tag.cs" />
     <Compile Include="Repositories\AnswerRepository.cs" />
     <Compile Include="Repositories\BlogUnitOfWork.cs" />
-    <Compile Include="Entities\Article.cs" />
-    <Compile Include="Entities\Review.cs" />
-    <Compile Include="Entities\UserInfo.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -72,7 +66,12 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\uBlog.Entities\uBlog.Entities.csproj">
+      <Project>{b695b7b2-e51a-4516-b70f-917c597052bb}</Project>
+      <Name>uBlog.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

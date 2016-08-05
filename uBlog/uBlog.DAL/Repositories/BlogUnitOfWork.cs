@@ -1,7 +1,7 @@
 ﻿using System;
 using uBlog.DAL.EF;
-using uBlog.DAL.Entities;
 using uBlog.DAL.Interfaces;
+using uBlog.Entities.BlogEntities;
 
 namespace uBlog.DAL.Repositories
 {

@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using uBlog.DAL.EF;
-using uBlog.DAL.Entities;
 using uBlog.DAL.Interfaces;
+using uBlog.Entities.BlogEntities;
 
 namespace uBlog.DAL.Repositories
 {

@@ -4,8 +4,8 @@ using System.Linq;
 using uBlog.BLL.DataTransferObjects;
 using uBlog.BLL.Infrastructure;
 using uBlog.BLL.Interfaces;
-using uBlog.DAL.Entities;
 using uBlog.DAL.Interfaces;
+using uBlog.Entities.BlogEntities;
 
 namespace uBlog.BLL.Services
 {

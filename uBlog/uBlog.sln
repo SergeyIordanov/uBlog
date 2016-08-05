@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "uBlog.DAL", "uBlog.DAL\uBlo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "uBlog.BLL", "uBlog.BLL\uBlog.BLL.csproj", "{20C84C79-65A9-4610-BD18-CD3B5C50C08B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "uBlog.Entities", "uBlog.Entities\uBlog.Entities.csproj", "{B695B7B2-E51A-4516-B70F-917C597052BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "uBlog.Auth", "uBlog.Auth\uBlog.Auth.csproj", "{662370CC-6EE2-46CD-B3D9-18925701D75F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{20C84C79-65A9-4610-BD18-CD3B5C50C08B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20C84C79-65A9-4610-BD18-CD3B5C50C08B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20C84C79-65A9-4610-BD18-CD3B5C50C08B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B695B7B2-E51A-4516-B70F-917C597052BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B695B7B2-E51A-4516-B70F-917C597052BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B695B7B2-E51A-4516-B70F-917C597052BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B695B7B2-E51A-4516-B70F-917C597052BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{662370CC-6EE2-46CD-B3D9-18925701D75F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{662370CC-6EE2-46CD-B3D9-18925701D75F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{662370CC-6EE2-46CD-B3D9-18925701D75F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{662370CC-6EE2-46CD-B3D9-18925701D75F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

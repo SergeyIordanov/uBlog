@@ -1,5 +1,5 @@
 ﻿using System.Data.Entity;
-using uBlog.DAL.Entities;
+using uBlog.Entities.BlogEntities;
 
 namespace uBlog.DAL.EF
 {

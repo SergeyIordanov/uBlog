@@ -68,6 +68,10 @@
       <Project>{f083b447-666a-4396-adb1-d7ee3ed90c07}</Project>
       <Name>uBlog.DAL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\uBlog.Entities\uBlog.Entities.csproj">
+      <Project>{B695B7B2-E51A-4516-B70F-917C597052BB}</Project>
+      <Name>uBlog.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

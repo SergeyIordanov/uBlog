@@ -40,3 +40,5 @@ C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog\uBlog.BLL\bin\Debug\EntityFramework.
 C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog\uBlog.BLL\obj\Debug\uBlog.BLL.csprojResolveAssemblyReference.cache
 C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog\uBlog.BLL\obj\Debug\uBlog.BLL.dll
 C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog\uBlog.BLL\obj\Debug\uBlog.BLL.pdb
+C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog\uBlog.BLL\bin\Debug\uBlog.Entities.dll
+C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog\uBlog.BLL\bin\Debug\uBlog.Entities.pdb
