@@ -60,13 +60,18 @@
         </div>
     </div>
     <div class="col s3 push-s1">
-        <div id="right-sidebar" class="card centralized">
-            <div class="row"></div>
-            <p class="card-title flow-text">Menu</p>
-            <div class="collection with-header">
-                @Html.RouteLink("Main", new { controller = "Home", action = "Index" }, new { @class = "collection-item" })
-                @Html.RouteLink("Guest", new { controller = "Guest", action = "Index" }, new { @class = "collection-item" })
-                @Html.RouteLink("Quize", new { controller = "Quize", action = "Index" }, new { @class = "collection-item active" })
+        <div class="row">
+            @Html.Partial("../Partials/_Loginblock")
+        </div>
+        <div class="row">
+            <div id="right-sidebar" class="card centralized">
+                <div class="row"></div>
+                <p class="card-title flow-text">Menu</p>
+                <div class="collection with-header">
+                    @Html.RouteLink("Main", new {controller = "Home", action = "Index"}, new {@class = "collection-item"})
+                    @Html.RouteLink("Guest", new {controller = "Guest", action = "Index"}, new {@class = "collection-item"})
+                    @Html.RouteLink("Quize", new {controller = "Quize", action = "Index"}, new {@class = "collection-item active"})
+                </div>
             </div>
         </div>
     </div>

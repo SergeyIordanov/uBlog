@@ -14,3 +14,5 @@ C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog\uBlog.Auth\bin\Debug\Microsoft.AspNe
 C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog\uBlog.Auth\obj\Debug\uBlog.Auth.csprojResolveAssemblyReference.cache
 C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog\uBlog.Auth\obj\Debug\uBlog.Auth.dll
 C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog\uBlog.Auth\obj\Debug\uBlog.Auth.pdb
+C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog\uBlog.Auth\obj\Debug\uBlog.Auth.Migrations.addIdentity.resources
+C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog\uBlog.Auth\obj\Debug\uBlog.Auth.csproj.GenerateResource.Cache

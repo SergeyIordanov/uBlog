@@ -15,6 +15,15 @@
     margin-top: 0;
 }
 
+.no-padding{
+     padding: 0 !important;
+}
+
+.no-padding-hor {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
 .centralized{
     text-align: center;
 }
