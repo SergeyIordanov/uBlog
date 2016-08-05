@@ -7,7 +7,7 @@ using Microsoft.Ajax.Utilities;
 using uBlog.BLL.DataTransferObjects;
 using uBlog.BLL.Infrastructure;
 using uBlog.BLL.Interfaces;
-using uBlog.WEB.Models;
+using uBlog.WEB.ViewModels;
 using static System.String;
 
 namespace uBlog.WEB.Controllers

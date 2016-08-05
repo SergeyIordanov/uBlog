@@ -3,7 +3,7 @@ using System.Web.Mvc;
 using AutoMapper;
 using uBlog.BLL.DataTransferObjects;
 using uBlog.BLL.Interfaces;
-using uBlog.WEB.Models;
+using uBlog.WEB.ViewModels;
 
 namespace uBlog.WEB.Controllers
 {
