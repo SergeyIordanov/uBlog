@@ -1,0 +1,16 @@
+C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog\uBlog.Auth\bin\Debug\uBlog.Auth.dll.config
+C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog\uBlog.Auth\bin\Debug\uBlog.Auth.dll
+C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog\uBlog.Auth\bin\Debug\uBlog.Auth.pdb
+C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog\uBlog.Auth\bin\Debug\EntityFramework.dll
+C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog\uBlog.Auth\bin\Debug\EntityFramework.SqlServer.dll
+C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog\uBlog.Auth\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog\uBlog.Auth\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog\uBlog.Auth\bin\Debug\uBlog.Entities.dll
+C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog\uBlog.Auth\bin\Debug\uBlog.Entities.pdb
+C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog\uBlog.Auth\bin\Debug\EntityFramework.xml
+C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog\uBlog.Auth\bin\Debug\EntityFramework.SqlServer.xml
+C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog\uBlog.Auth\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog\uBlog.Auth\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog\uBlog.Auth\obj\Debug\uBlog.Auth.csprojResolveAssemblyReference.cache
+C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog\uBlog.Auth\obj\Debug\uBlog.Auth.dll
+C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog\uBlog.Auth\obj\Debug\uBlog.Auth.pdb
