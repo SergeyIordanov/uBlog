@@ -42,3 +42,7 @@ C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog\uBlog.BLL\obj\Debug\uBlog.BLL.dll
 C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog\uBlog.BLL\obj\Debug\uBlog.BLL.pdb
 C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog\uBlog.BLL\bin\Debug\uBlog.Entities.dll
 C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog\uBlog.BLL\bin\Debug\uBlog.Entities.pdb
+C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog\uBlog.BLL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog\uBlog.BLL\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog\uBlog.BLL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\1Sergey\4ProjectsInGit\uBlog\uBlog\uBlog\uBlog.BLL\bin\Debug\Microsoft.AspNet.Identity.Core.xml
