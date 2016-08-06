@@ -293,6 +293,8 @@
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\SuccessRegister.cshtml" />
     <Content Include="Views\Partials\_LoginBlock.cshtml" />
+    <Content Include="Views\Account\Partials\_LoginForm.cshtml" />
+    <Content Include="Views\Account\Partials\_RegisterForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Admin\Models\" />
