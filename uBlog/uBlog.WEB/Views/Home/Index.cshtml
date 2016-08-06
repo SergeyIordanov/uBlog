@@ -9,7 +9,7 @@
             <div class="row"></div>
             <p class="flow-text welcome-text centralized">Feed</p>
             <p class="flow-text sub-welcome-text centralized">Hope you'll find something interesting here</p>
-            <hr class="colored-hr no-margin-vert" />
+            @*<hr class="colored-hr no-margin-vert" />
             <ul class="collapsible z-depth-0 no-margin-vert" data-collapsible="accordion">
                 <li>
                     <div class="collapsible-header centralized write-article-header">                       
@@ -21,7 +21,8 @@
                     </div>
                 </li>
             </ul>
-            <hr class="colored-hr no-margin-vert" />
+            <hr class="colored-hr no-margin-vert" />*@
+            <hr class="colored-hr" />
             <div id="article_target" class="row">
                 @Html.Partial("Partials/_ArticleList", Model)
             </div>
