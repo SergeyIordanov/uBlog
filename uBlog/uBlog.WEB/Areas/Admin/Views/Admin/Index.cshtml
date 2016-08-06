@@ -1,5 +1,46 @@
-﻿@{
-    ViewBag.Title = "Admin";
+﻿@model IEnumerable<uBlog.WEB.ViewModels.ArticleViewModel>
+@{
+    ViewBag.Title = "Admin - Articles";
+    Layout = "../Shared/_Layout.cshtml";
 }
 
-<h2>title</h2>
+<div class="row no-margin-bot">
+    <div class="col s7 push-s1">
+        <div id="main-body" class="card">
+            <div class="row"></div>
+            <p class="flow-text welcome-text centralized">Articles</p>
+            <hr class="colored-hr no-margin-vert" />
+            <ul class="collapsible z-depth-0 no-margin-vert" data-collapsible="accordion">
+                <li>
+                    <div class="collapsible-header centralized write-article-header">
+                        <span class="flow-text write-article-text">Write an article</span>
+                        <i class="material-icons right">reorder</i>
+                    </div>
+                    <div class="collapsible-body">
+                        @Html.Partial("Partials/_ArticleForm", Model.LastOrDefault())
+                    </div>
+                </li>
+            </ul>
+            <hr class="colored-hr no-margin-vert" />
+            <div id="article_target" class="row">
+                @Html.Partial("Partials/_ArticleList", Model)
+            </div>
+        </div>
+    </div>
+    <div class="col s3 push-s1">
+        <div class="row">
+            @Html.Partial("Partials/_LoginBlock")
+        </div>
+        <div class="row">
+            <div id="right-sidebar" class="card centralized">
+                <div class="row"></div>
+                <p class="card-title flow-text">Tools</p>
+                <div class="collection with-header">
+                    @Html.RouteLink("Articles", new { controller = "Admin", action = "Index" }, new { @class = "collection-item active" })
+                    @Html.RouteLink("Reviews", new { controller = "Admin", action = "Reviewes" }, new { @class = "collection-item" })
+                    @*@Html.RouteLink("Users", new { controller = "Admin", action = "Users" }, new { @class = "collection-item" })*@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

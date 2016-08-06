@@ -1,0 +1,37 @@
+﻿@model IEnumerable<uBlog.WEB.ViewModels.ReviewViewModel>
+
+@{
+    ViewBag.Title = "Admin - Reviewes";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row no-margin-bot">
+    <div class="col s7 push-s1">
+        <div id="main-body" class="card">
+            <div class="row"></div>
+            <p class="flow-text welcome-text centralized">Reviews</p>
+            <hr class="colored-hr" />
+            <div id="review_target" class="row">
+                @Html.Partial("Partials/_ReviewList", Model)
+            </div>
+        </div>
+    </div>
+    <div class="col s3 push-s1">
+        <div class="row">
+            @Html.Partial("Partials/_LoginBlock")
+        </div>
+        <div class="row">
+            <div id="right-sidebar" class="card centralized">
+                <div class="row"></div>
+                <p class="card-title flow-text">Tools</p>
+                <div class="collection with-header">
+                    @Html.RouteLink("Articles", new { controller = "Admin", action = "Index" }, new { @class = "collection-item" })
+                    @Html.RouteLink("Reviews", new { controller = "Admin", action = "Reviewes" }, new { @class = "collection-item active" })
+                    @*@Html.RouteLink("Users", new { controller = "Admin", action = "Users" }, new { @class = "collection-item" })*@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

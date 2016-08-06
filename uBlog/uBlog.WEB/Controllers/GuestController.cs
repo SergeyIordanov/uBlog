@@ -46,19 +46,6 @@ namespace uBlog.WEB.Controllers
             mapper = configView.CreateMapper();
             var model = mapper.Map<IEnumerable<ReviewViewModel>>(_blogService.GetReviewes());
             return PartialView("Partials/_ReviewList", model);
-        }
-
-        [HttpPost]
-        public ActionResult Delete(int? id)
-        {
-            try
-            {
-                _blogService.DeleteReview(id);
-            }
-            catch (ValidationException) { }
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<ReviewDto, ReviewViewModel>());
-            var mapper = config.CreateMapper();
-            return PartialView("Partials/_ReviewList", mapper.Map<IEnumerable<ReviewViewModel>>(_blogService.GetReviewes()));
-        }
+        }       
     }
 }

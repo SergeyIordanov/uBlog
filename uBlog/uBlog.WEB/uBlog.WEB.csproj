@@ -212,6 +212,7 @@
       <DependentUpon>BlogDB.mdf</DependentUpon>
     </Content>
     <Content Include="Content\Images\article.png" />
+    <Content Include="Content\Images\header-admin.png" />
     <Content Include="Content\Images\header.png" />
     <Content Include="Content\Images\layout.jpg" />
     <Content Include="Content\materialize.css" />
@@ -241,6 +242,11 @@
     <Content Include="Areas\Admin\Views\web.config" />
     <None Include="Areas\Admin\Views\Admin\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\Partials\_LoginBlock.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\Partials\_ArticleForm.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\Partials\_ArticleList.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\Partials\_ReviewList.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\Reviewes.cshtml" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />

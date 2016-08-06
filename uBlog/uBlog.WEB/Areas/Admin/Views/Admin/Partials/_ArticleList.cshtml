@@ -1,0 +1,59 @@
+﻿@model IEnumerable<uBlog.WEB.ViewModels.ArticleViewModel>
+
+@using uBlog.WEB.Helpers
+
+@if (!Model.Any())
+{
+    <p class="flow-text centralized welcome-text">There are no articles yet..</p>
+}
+else
+{
+    foreach (var item in Model.Reverse())
+    {
+        <div class="row">
+            <div class="col s10 push-s1">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="row valign-wrapper">
+                            <div class="col s2">
+                                <img src="~/Content/Images/article.png" height="100" width="100" alt="" class="circle responsive-img">
+                            </div>
+                            <div class="col s9 centralized">                               
+                                @Html.ActionLink( item.Title, "ShowArticle", new {area = "", controller = "Home", id = item.ArticleId }, new {@class = "flow-text black-text article-title" })
+                            </div>
+                            <div class="col s1 centralized">
+                                <a data-ajax="true" data-ajax-confirm="Are you sure you want to delete this article?" 
+                                   data-ajax-method="post" data-ajax-mode="replace" data-ajax-update="#article_target" href="/Admin/Admin/DeleteArticle/@item.ArticleId">
+                                    <i class="material-icons">clear</i>
+                                </a>
+                            </div>                         
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <div class="col s12">
+                                @{
+                                    string text = item.Text.Replace("\r\n", "☼");
+                                    if (text.Length > 200)
+                                    {
+                                        @Html.WriteHtml(text.Substring(0, 200).Replace("☼", "<br>") + " ... ")
+                                    }
+                                    else
+                                    {
+                                        @Html.WriteHtml( "<p>" + text.Replace("☼", "<br>") + " </p>")
+                                    }
+                                }
+                                @Html.ActionLink("show more", "ShowArticle", new { controller = "Home", id = item.ArticleId })
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s4 push-s8">
+                                @Html.DisplayFor(modelItem => item.PublishDate)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}
+
