@@ -1,0 +1,26 @@
+﻿@model uBlog.WEB.ViewModels.ArticleViewModel
+
+@using (Ajax.BeginForm("Index", "Article", new AjaxOptions { UpdateTargetId = "article_target", OnComplete = ""}))
+{
+    <div class="row">
+        <div class="input-field col s10 push-s1">
+            @Html.LabelFor(model => model.Title, "Article title")
+            <input class="text-box single-line" id="article_title" name="Title" required="required" type="text">
+            @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+        </div>
+        <div class="input-field col s10 push-s1">
+            @Html.LabelFor(model => model.Text, "Text:")
+            <textarea class="materialize-textarea" cols="20" id="article_text" name="Text" required="required" rows="2"></textarea>
+            @* @Html.TextAreaFor(model => model.Text, new { @class = "materialize-textarea", @required = "required", @id = "review_text" })*@
+            @Html.ValidationMessageFor(model => model.Text, "", new { @class = "text-danger" })
+        </div>
+        <div class="input-field col s10 push-s1">
+            @Html.LabelFor(model => model.Tags, "Add tags here (separate it by whitespaces):")
+            <input class="text-box single-line" id="tags" name="Tags" type="text">
+            @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+        </div>
+        <div class="input-field col s10 push-s1">
+            <input type="submit" value="Send" class="btn btn-default" />
+        </div>
+    </div>
+}
