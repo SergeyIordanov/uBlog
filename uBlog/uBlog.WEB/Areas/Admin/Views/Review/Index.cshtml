@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<uBlog.WEB.ViewModels.ReviewViewModel>
 
 @{
-    ViewBag.Title = "Admin - Reviewes";
+    ViewBag.Title = "Admin/Reviewes";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
@@ -18,16 +18,16 @@
     </div>
     <div class="col s3 push-s1">
         <div class="row">
-            @Html.Partial("Partials/_LoginBlock")
+            @Html.Partial("../Partials/_LoginBlock")
         </div>
         <div class="row">
             <div id="right-sidebar" class="card centralized">
                 <div class="row"></div>
                 <p class="card-title flow-text">Tools</p>
                 <div class="collection with-header">
-                    @Html.RouteLink("Articles", new { controller = "Admin", action = "Index" }, new { @class = "collection-item" })
-                    @Html.RouteLink("Reviews", new { controller = "Admin", action = "Reviewes" }, new { @class = "collection-item active" })
-                    @*@Html.RouteLink("Users", new { controller = "Admin", action = "Users" }, new { @class = "collection-item" })*@
+                    @Html.RouteLink("Articles", new { controller = "Article", action = "Index" }, new { @class = "collection-item" })
+                    @Html.RouteLink("Reviews", new { controller = "Review", action = "Index" }, new { @class = "collection-item active" })
+                    @Html.RouteLink("Users", new { controller = "User", action = "Index" }, new { @class = "collection-item" })
                 </div>
             </div>
         </div>

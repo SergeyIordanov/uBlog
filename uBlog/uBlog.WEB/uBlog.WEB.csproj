@@ -184,6 +184,9 @@
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ArticleController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ReviewController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UserController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\GuestController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -211,10 +214,13 @@
     <Content Include="App_Data\BlogDB_log.ldf">
       <DependentUpon>BlogDB.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\Images\article-img.png" />
     <Content Include="Content\Images\article.png" />
     <Content Include="Content\Images\header-admin.png" />
     <Content Include="Content\Images\header.png" />
     <Content Include="Content\Images\layout.jpg" />
+    <Content Include="Content\Images\review-img.png" />
+    <Content Include="Content\Images\user-img.png" />
     <Content Include="Content\materialize.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -240,13 +246,15 @@
     <Content Include="fonts\roboto\Roboto-Thin.woff" />
     <Content Include="fonts\roboto\Roboto-Thin.woff2" />
     <Content Include="Areas\Admin\Views\web.config" />
-    <None Include="Areas\Admin\Views\Admin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\Index.cshtml" />
+    <None Include="Areas\Admin\Views\Article\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\Admin\Views\Admin\Partials\_LoginBlock.cshtml" />
-    <Content Include="Areas\Admin\Views\Admin\Partials\_ArticleForm.cshtml" />
-    <Content Include="Areas\Admin\Views\Admin\Partials\_ArticleList.cshtml" />
-    <Content Include="Areas\Admin\Views\Admin\Partials\_ReviewList.cshtml" />
-    <Content Include="Areas\Admin\Views\Admin\Reviewes.cshtml" />
+    <Content Include="Areas\Admin\Views\Partials\_LoginBlock.cshtml" />
+    <Content Include="Areas\Admin\Views\Article\Partials\_ArticleForm.cshtml" />
+    <Content Include="Areas\Admin\Views\Article\Partials\_ArticleList.cshtml" />
+    <Content Include="Areas\Admin\Views\Review\Partials\_ReviewList.cshtml" />
+    <Content Include="Areas\Admin\Views\Review\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\User\Index.cshtml" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
