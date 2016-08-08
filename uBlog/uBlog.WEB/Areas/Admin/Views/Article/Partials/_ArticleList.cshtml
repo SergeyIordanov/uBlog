@@ -42,7 +42,7 @@ else
                                         @Html.WriteHtml( "<p>" + text.Replace("☼", "<br>") + " </p>")
                                     }
                                 }
-                                @Html.ActionLink("show more", "ShowArticle", new { controller = "Home", id = item.ArticleId })
+                                @Html.ActionLink("show more", "ShowArticle", new { area = "", controller = "Home", id = item.ArticleId })
                             </div>
                         </div>
                         <div class="row">
