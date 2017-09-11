@@ -5,7 +5,7 @@ using uBlog.Entities.BlogEntities;
 
 namespace uBlog.DAL.EF
 {
-    public class BlogDbInitializer : DropCreateDatabaseAlways<BlogContext>
+    public class BlogDbInitializer : DropCreateDatabaseIfModelChanges<BlogContext>
     {
         protected override void Seed(BlogContext db)
         {
