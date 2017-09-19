@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using uBlog.Entities.BlogEntities;
 
 namespace uBlog.DAL.EF
 {
-    public class BlogDbInitializer : DropCreateDatabaseIfModelChanges<BlogContext>
+    public static class BlogDbInitializer
     {
-        protected override void Seed(BlogContext db)
+        public static void Seed(BlogContext db)
         {
             var tags = new List<Tag>
             {

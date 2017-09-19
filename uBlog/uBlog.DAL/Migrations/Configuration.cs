@@ -1,18 +1,18 @@
-namespace uBlog.Auth.Migrations
+namespace uBlog.DAL.Migrations
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<uBlog.Auth.DAL.EF.AuthContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<uBlog.DAL.EF.BlogContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(uBlog.Auth.DAL.EF.AuthContext context)
+        protected override void Seed(uBlog.DAL.EF.BlogContext context)
         {
             //  This method will be called after migrating to the latest version.
 

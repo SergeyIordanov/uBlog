@@ -14,12 +14,17 @@ namespace uBlog.DAL.EF
 
         static BlogContext()
         {
-            Database.SetInitializer(new BlogDbInitializer());
+            
         }
 
-        public BlogContext(string connectionString)
-            : base(connectionString)
+        public BlogContext(string connectionString) : base(connectionString)
         {
+            // BlogDbInitializer.Seed(this);
+        }
+
+        public BlogContext() : base("BlogContext")
+        {
+            // For migrations
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

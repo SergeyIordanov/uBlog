@@ -51,6 +51,11 @@
   <ItemGroup>
     <Compile Include="EF\BlogContext.cs" />
     <Compile Include="EF\BlogDbInitializer.cs" />
+    <Compile Include="Migrations\201709190756216_InitialMigration.cs" />
+    <Compile Include="Migrations\201709190756216_InitialMigration.Designer.cs">
+      <DependentUpon>201709190756216_InitialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repositories\AnswerRepository.cs" />
     <Compile Include="Repositories\BlogUnitOfWork.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
@@ -71,6 +76,11 @@
       <Project>{b695b7b2-e51a-4516-b70f-917c597052bb}</Project>
       <Name>uBlog.Entities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201709190756216_InitialMigration.resx">
+      <DependentUpon>201709190756216_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
